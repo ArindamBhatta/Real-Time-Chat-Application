@@ -4,8 +4,8 @@
   "description": "Backend for chat application using Node.js, Express, Socket.io, and Postgres (Neon)",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "start": "tsx src/index.ts",
+    "dev": "tsx watch --env-file=.env src/index.ts",
+    "start": "tsx --env-file=.env src/index.ts",
     "typecheck": "tsc -p tsconfig.json",
     "db:generate": "drizzle-kit generate",
     "db:push": "drizzle-kit push",
@@ -22,7 +22,6 @@
     "cloudinary": "^2.5.1",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
     "drizzle-orm": "^0.45.4",
     "express": "^4.21.1",
     "express-rate-limit": "^8.5.2",

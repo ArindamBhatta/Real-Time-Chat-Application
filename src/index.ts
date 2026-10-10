@@ -1,9 +1,3 @@
-import dotenv from "dotenv";
-
-// Load environment variables from .env file before any other local module
-// reads process.env at import time (e.g. infrastructure/db.ts).
-dotenv.config();
-
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
