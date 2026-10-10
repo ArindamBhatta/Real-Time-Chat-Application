@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "commonjs",
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "lib": [
-      "ES2020"
+      "ES2022"
     ],
-    "outDir": "./dist",
+    "noEmit": true,
     "rootDir": "./",
     "strict": true,
     "esModuleInterop": true,
@@ -13,9 +14,6 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
     "strictPropertyInitialization": false,
     "experimentalDecorators": true
   },

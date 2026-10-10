@@ -22,7 +22,7 @@ export const getUsersForSidebar = async (req: Request, res: Response) => {
  */
 export const getMessages = async (req: Request, res: Response) => {
   try {
-    const { id: userToChatId } = req.params;
+    const userToChatId = req.params.id as string;
     const myId = req.user!.id;
 
     // Pagination params (defaults: page 1, 50 messages)
@@ -77,7 +77,7 @@ export const searchMessages = async (req: Request, res: Response) => {
 export const sendMessage = async (req: Request, res: Response) => {
   try {
     const { text, image } = req.body;
-    const { id: receiverId } = req.params;
+    const receiverId = req.params.id as string;
     const senderId = req.user!.id;
 
     const newMessage = await messageService.send({ senderId, receiverId, text, image });
@@ -98,7 +98,7 @@ export const sendMessage = async (req: Request, res: Response) => {
  */
 export const markMessageRead = async (req: Request, res: Response) => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const readerId = req.user!.id;
 
     const message = await messageService.markRead(id, readerId);
